@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
 """
-    List of floats annotations
+function floor
+@n: float
+returns the floor of the float.
 """
 
-from typing import List
 
-def sum_list(input_list: List[float]) -> float:
-    """
-
-    Args:
-    input_list (List[float]): A list of floating-point numbers.
-
-    Returns:
-    float: The sum of the elements in `input_list`.
-    """
-    return sum(input_list)
+def floor(n: float) -> int:
+    """type-annotated function floor"""
+    if n < 0:
+        n = n * -1
+    return int(n)

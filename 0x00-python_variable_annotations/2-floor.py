@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Typing project."""
+"""
+function floor
+@n: float
+returns the floor of the float.
+"""
+
 
 def floor(n: float) -> int:
-    """
-    Args:
-    n (float): A floating-point number.
-
-    Returns:
-    int: The largest integer less than or equal to `n`.
-    """
-    return int(n // 1)
-
+    """type-annotated function floor"""
+    if n < 0:
+        n = n * -1
+    return int(n)

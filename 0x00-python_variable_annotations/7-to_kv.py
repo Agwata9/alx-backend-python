@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""
-    Mixed Tuple
-"""
-from typing import Union, Tuple
+""" type-annotated function to_kv """
 
-def to_kiv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+
+from typing import Tuple, Union
+
+
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+    """type-annotated function to_kv
+    Args:
+        k (str): any string
+        v (Union[int, float]): any integer or float
+    Returns:
+        Tuple[str, float]:
+        Tuple with two elements, a string and a square as float
     """
-        Args:
-            k: String
-            v: Union: Can be int or float
-        Return:
-            Tuple with string and int or float
-    """
-
-
-    return k, float(v ** 2)
+    return (k, v ** 2)

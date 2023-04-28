@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
-"""
-    Duck typing sequence Any
-"""
+""" duck-typed annotations """
+
+
+# The types of the elements of the input are not know
 from typing import Any, Sequence, Union
 
+
 def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
-    """
-    Given a list, return the first element if it exists, else return None.
-
+    """Safe first element function
     Args:
-    lst (Sequence[Any]): A sequence of elements of any type.
-
+        lst (Sequence[Any]): Secuence in list type any
     Returns:
-    Union[Any, None]: The first element of the input sequence, or None if the
-    sequence is empty.
+        Union[Any, None]: Any type or None
     """
     if lst:
         return lst[0]
