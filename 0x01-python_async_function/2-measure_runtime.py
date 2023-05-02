@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
-""" Comprehension project """
-import asyncio
+
 import time
-from typing import Coroutine
-
-async_comprehension = __import__('1-async_comprehension').async_comprehension
+from typing import List
 
 
-def task_wait_random(max_delay: int) -> asyncio.Task:
-    coro = wait_random(max_delay)
-    task = asyncio.create_task(coro)
-    return task
+def wait_n(n: int, max_delay: int) -> List[float]:
+    """Generate n random delays of up to max_delay seconds."""
+    delays = [random.uniform(0, max_delay) for _ in range(n)]
+    return sorted(delays)
+
+
+def measure_time(n: int, max_delay: int) -> float:
+    """Measure the average execution time of wait_n function."""
+    start = time.time()
+    wait_n(n, max_delay)
+    end = time.time()
+    total_time = end - start
+    return total_time / n
+
